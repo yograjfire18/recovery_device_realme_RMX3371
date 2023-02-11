@@ -5,13 +5,13 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-LOCAL_PATH := device/oneplus/lemonades
+LOCAL_PATH := device/realme/RMX3371
 
 # define hardware platform
 PRODUCT_PLATFORM := kona
 
 #SHIPPING API
-PRODUCT_SHIPPING_API_LEVEL := 30
+PRODUCT_SHIPPING_API_LEVEL := 31
 
 #VNDK API
 PRODUCT_TARGET_VNDK_VERSION := 31
@@ -83,5 +83,5 @@ PRODUCT_PACKAGES_ENG += \
 
 #TWRP
 PRODUCT_COPY_FILES += \
-    device/oneplus/lemonades/prebuilt/systemmanifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/system/manifest.xml \
-    device/oneplus/lemonades/prebuilt/vendormanifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/manifest.xml \
+    device/realme/RMX3371/prebuilt/systemmanifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/system/manifest.xml \
+    device/realme/RMX3371/prebuilt/vendormanifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/manifest.xml \

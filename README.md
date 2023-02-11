@@ -1,67 +1,38 @@
-# Device Tree for 9R (lemonades) for TWRP
+## Device specifications
 
-## Setup repo tool
-Setup repo tool from here https://source.android.com/setup/develop#installing-repo
+| Device                  | Realme GT Neo 3T (5G)                                        |
+| ----------------------- | :---------------------------------------------------------- |
+| SoC                     | Qualcomm SM8250-AC Snapdragon 870 5G (7 nm)                 |
+| CPU                     | Octa-core (1x3.2 GHz Kryo 585 & 3x2.42 GHz Kryo 585 & 4x1.80 GHz Kryo 585)|
+| GPU                     | Adreno 650                                                  |
+| Shipped Android version | Android 12.0 with Realme UI 3.0                             |
+| Memory                  | 6/8/12 GB RAM                                                 |
+| Storage                 | (128/256) / 256 GB                                          |
+| Battery                 | Non-removable Li-Po 5000 mAh                                |
+| Display                 | 1080 x 2400 pixels, 20:9 ratio, 6.62 inches AMOLED (~398 ppi density) |
 
-##Sync TWRP manifest:
 
-```
-repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
+## Device picture
+![Realme GT Neo 3T](https://fdn2.gsmarena.com/vv/pics/realme/neo-3t-1.jpg "Realme GT Neo 3T")
 
-```
-
-## You might need to cherry-pick patches from gerrit.twrp.me to get some stuff working.
-
-1:= https://gerrit.twrp.me/c/android_system_update_engine/+/5759
-
-2:= https://gerrit.twrp.me/c/android_bootable_recovery/+/5691
-
-3:= https://gerrit.twrp.me/c/android_build/+/5445
-
-## Below is an optional Cherry-pick For the device if you want to add it
-
-4:= https://gerrit.twrp.me/c/android_system_core/+/5658 
-
-## Make a directory named local_manifest under .repo, and create a new manifest file, for example local_manifests.xml and then paste the following
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<manifest>
-  <project path="device/oneplus/lemonades" name="ApexLegend007/twrp_device_oneplus_lemonades" remote="github" revision="android-12.1" />
-</manifest>
-```
-
-## Sync the sources with
-
-```
-repo sync -j$(nproc --all)
-```
-
-## To compile Recovery, execute this command:
-
-```
-. build/envsetup.sh; export ALLOW_MISSING_DEPENDENCIES=true; export LC_ALL=C; lunch twrp_lemonades-eng; make -j$(nproc --all) adbd recoveryimage
-```
-
-## To test it:
-
-```
-# To temporarily boot it
-fastboot boot out/target/product/lemonades/recovery.img 
-
-# Since 9R has a separate recovery partition, you can flash the recovery with
-fastboot flash recovery recovery.img
-```
-
-Kernel: https://github.com/oneplusoss/android_kernel_oneplus_sm8250
-
-##### Credits
-- The-Incognito For Recovery Trees of Oneplus 8T
-- YumeMichi For Implementing Erofs and Other Misc
-- bigbiff for decryption
-- osm0sis for OOS Flashing support
-- Systemad for original tree
-- CaptainThrowback for original tree
-- mauronofrio for original tree
-- TWRP team
-- Qnorsten for OOS Flashing Fix
+---
+## Copyright notice
+ ```
+  /*
+  *  Copyright (C) 2020-2021 The OrangeFox Recovery Project
+  *
+  * This program is free software: you can redistribute it and/or modify
+  * it under the terms of the GNU General Public License as published by
+  * the Free Software Foundation, either version 3 of the License, or
+  * (at your option) any later version.
+  *
+  * This program is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  * GNU General Public License for more details.
+  *
+  * You should have received a copy of the GNU General Public License
+  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  *
+  */
+  ```

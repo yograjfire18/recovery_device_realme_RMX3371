@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_lemonades.mk
+    $(LOCAL_DIR)/twrp_RMX3371.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_lemonades-user \
-    twrp_lemonades-userdebug \
-    twrp_lemonades-eng
+    twrp_RMX3371-user \
+    twrp_RMX3371-userdebug \
+    twrp_RMX3371-eng
