@@ -5,13 +5,13 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Enable virtual A/B OTA
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+
 LOCAL_PATH := device/realme/RMX3371
 
 # define hardware platform
 PRODUCT_PLATFORM := kona
-
-#SHIPPING API
-PRODUCT_SHIPPING_API_LEVEL := 30
 
 #VNDK API
 PRODUCT_TARGET_VNDK_VERSION := 30
@@ -80,8 +80,3 @@ PRODUCT_SOONG_NAMESPACES += \
 # tzdata
 PRODUCT_PACKAGES_ENG += \
     tzdata_twrp
-
-#TWRP
-PRODUCT_COPY_FILES += \
-    device/realme/RMX3371/prebuilt/systemmanifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/system/manifest.xml \
-    device/realme/RMX3371/prebuilt/vendormanifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/manifest.xml \
